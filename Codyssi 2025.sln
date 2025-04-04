@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompassCalibration", "CompassCalibration\CompassCalibration.csproj", "{E82C04A8-B3C1-4184-AC4B-D309A650B11A}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SirenDisruption", "SirenDisruption\SirenDisruption.csproj", "{638BA523-B60B-49A9-AFB3-7144BD3942EE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskyShortcut", "RiskyShortcut\RiskyShortcut.csproj", "{AFE5BEF8-C8A0-48BE-A650-B97EAF411529}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindyBargain", "WindyBargain\WindyBargain.csproj", "{DF1A9B57-FD2B-4706-BC69-125391DDC7FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{AFE5BEF8-C8A0-48BE-A650-B97EAF411529}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFE5BEF8-C8A0-48BE-A650-B97EAF411529}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFE5BEF8-C8A0-48BE-A650-B97EAF411529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF1A9B57-FD2B-4706-BC69-125391DDC7FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF1A9B57-FD2B-4706-BC69-125391DDC7FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF1A9B57-FD2B-4706-BC69-125391DDC7FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF1A9B57-FD2B-4706-BC69-125391DDC7FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
