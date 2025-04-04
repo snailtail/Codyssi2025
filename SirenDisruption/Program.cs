@@ -1,14 +1,55 @@
-﻿const string fileName = "example.txt";
+﻿const string fileName = "input.txt";
 var allLines = File.ReadAllText(fileName);
 var split = allLines.Split($"{Environment.NewLine}{Environment.NewLine}");
-var frequencies = split[0].Split(Environment.NewLine);
+//var frequencies = split[0].Split(Environment.NewLine);
 var swaps = split[1].Split(Environment.NewLine);
 var testFrequency = int.Parse(split[2]);
 
 part1(split[0].Split(Environment.NewLine));
 part2(split[0].Split(Environment.NewLine));
+part3(split[0].Split(Environment.NewLine));
 
+void part3(string[] frequencies)
+{
+    // For each swapping instruction (X-Y), consider pairs of same-length blocks starting at tracks X and Y, respectively.
+    // Then, choose the pair of blocks with the maximum length that don’t overlap and don’t extend beyond the final track.
+    Queue<string> tasks = new Queue<string>();
+    foreach (var swap in swaps)
+    {
+        (int x, int y) = ParseSwap(swap);
 
+        int maxlength = Math.Abs(y - x);
+
+        int min = Math.Min(x, y);
+        int max = Math.Max(x, y);
+
+        while (max + maxlength >= frequencies.Length)
+        {
+            maxlength--;
+        }
+        
+
+        for (int i = 1; i <= maxlength;i++)
+        {
+            string task = $"{min + i}-{max + i}";
+            tasks.Enqueue(task);
+        }
+
+        while(tasks.Count > 0)
+        {
+            var task = tasks.Dequeue();
+            var (from, to) = ParseSwap(task);
+            var temp = frequencies[from];
+            frequencies[from] = frequencies[to];
+            frequencies[to] = temp;
+        }
+
+    }
+    var part3Result = frequencies[testFrequency - 1];
+
+    Console.WriteLine($"Part 3: {part3Result}");
+
+}
 
 void part2(string[] frequencies)
 {
