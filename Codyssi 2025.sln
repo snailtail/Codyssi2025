@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuppliesInSurplus", "Suppli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AeolianTransmissions", "AeolianTransmissions\AeolianTransmissions.csproj", "{19A105D4-9659-4894-9632-B6C1F5C0290B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatronIslands", "PatronIslands\PatronIslands.csproj", "{E90C5649-81C4-4F9F-B53E-BECED89FA391}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{19A105D4-9659-4894-9632-B6C1F5C0290B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19A105D4-9659-4894-9632-B6C1F5C0290B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19A105D4-9659-4894-9632-B6C1F5C0290B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E90C5649-81C4-4F9F-B53E-BECED89FA391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E90C5649-81C4-4F9F-B53E-BECED89FA391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E90C5649-81C4-4F9F-B53E-BECED89FA391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E90C5649-81C4-4F9F-B53E-BECED89FA391}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
