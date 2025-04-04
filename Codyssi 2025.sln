@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotusScramble", "LotusScram
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SirenDisruption", "SirenDisruption\SirenDisruption.csproj", "{638BA523-B60B-49A9-AFB3-7144BD3942EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskyShortcut", "RiskyShortcut\RiskyShortcut.csproj", "{AFE5BEF8-C8A0-48BE-A650-B97EAF411529}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{638BA523-B60B-49A9-AFB3-7144BD3942EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{638BA523-B60B-49A9-AFB3-7144BD3942EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{638BA523-B60B-49A9-AFB3-7144BD3942EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFE5BEF8-C8A0-48BE-A650-B97EAF411529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFE5BEF8-C8A0-48BE-A650-B97EAF411529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFE5BEF8-C8A0-48BE-A650-B97EAF411529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFE5BEF8-C8A0-48BE-A650-B97EAF411529}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
