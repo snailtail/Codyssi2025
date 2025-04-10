@@ -1,8 +1,19 @@
-﻿const string fileName ="input.txt";
-List<int[]> rows = File.ReadAllLines(fileName).Select(line => line.Split(' ').Select(int.Parse).ToArray()).ToList();
-Part1();
-void Part1()
+﻿const string fileName ="example.txt";
+var input = File.ReadAllLines(fileName);
+Part1(input);
+Part2(input);
+void Part2(string[] input)
 {
+    int[][] grid = input.Select(line => line.Split(' ').Select(int.Parse).ToArray()).ToArray();
+    
+}
+
+
+
+
+void Part1(string[] input)
+{
+    List<int[]> rows = input.Select(line => line.Split(' ').Select(int.Parse).ToArray()).ToList();
     int lowestRowSum = int.MaxValue;
     int lowestColSum = int.MaxValue;
     foreach (var row in rows)
