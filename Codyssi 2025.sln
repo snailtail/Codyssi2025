@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskyShortcut", "RiskyShort
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindyBargain", "WindyBargain\WindyBargain.csproj", "{DF1A9B57-FD2B-4706-BC69-125391DDC7FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyclopsChaos", "CyclopsChaos\CyclopsChaos.csproj", "{39FDDCDE-A8DE-4CBE-BEF5-3AC7E93FA8E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{DF1A9B57-FD2B-4706-BC69-125391DDC7FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF1A9B57-FD2B-4706-BC69-125391DDC7FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF1A9B57-FD2B-4706-BC69-125391DDC7FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39FDDCDE-A8DE-4CBE-BEF5-3AC7E93FA8E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39FDDCDE-A8DE-4CBE-BEF5-3AC7E93FA8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39FDDCDE-A8DE-4CBE-BEF5-3AC7E93FA8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39FDDCDE-A8DE-4CBE-BEF5-3AC7E93FA8E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
