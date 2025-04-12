@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-const string fileName = "example.txt";
+const string fileName = "input.txt";
 var input = File.ReadAllLines(fileName);
 
 
@@ -16,6 +16,8 @@ foreach(var line in input)
 
 
 Console.WriteLine($"Part 1: {Part1()}");
+Console.WriteLine($"Part 2: {Part2()}");
+Console.WriteLine($"Part 3: {Part3()}");
 
 
 
@@ -30,11 +32,39 @@ long Part1()
     return largestNumber;
 }
 
+string Part2()
+{
+    long sum = 0;
+    foreach(var number in numbers)
+    {
+        long thisvalue = number.GetLongValue();
+        sum += thisvalue;
+    }
+    return NumberEntry.GetBaseValueString(sum,68);
+}
+
+int Part3()
+{
+    long sum = 0;
+    foreach(var number in numbers)
+    {
+        long thisvalue = number.GetLongValue();
+        sum += thisvalue;
+    }
+    double root = Math.Pow(sum, 1.0 / 4);
+    int result = (int)Math.Ceiling(root);
+    return result;
+}
 
 int slask = 1;
 
 class NumberEntry
 {
+    
+    private const string Numbers = "0123456789";
+    private const string Upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private const string Lower = "abcdefghijklmnopqrstuvwxyz";
+    private const string Specials = "!@#$%^";
     public string NumberAsString { get; set; }
     public int BaseValue { get; set; }
 
@@ -44,33 +74,47 @@ class NumberEntry
         BaseValue = baseValue;
     }
 
-    public long GetLongValue()
+
+    public static string GetBaseValueString(long number, int baseValue)
     {
-        long result = 0;
-        int multiplier = 1;
-
-        // Process the string from right to left
-        for (int i = this.NumberAsString.Length - 1; i >= 0; i--)
+        const string Numbers = "0123456789";
+        const string Upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const string Lower = "abcdefghijklmnopqrstuvwxyz";
+        const string Specials = "!@#$%^";
+        string charset = (Numbers + Upper + Lower + Specials).Substring(0,baseValue);
+        StringBuilder sb = new();
+        while (number > 0)
         {
-            char c = this.NumberAsString[i];
-            long value = c switch
-            {
-                >= '0' and <= '9' => c - '0',
-                >= 'A' and <= 'Z' => c - 'A' + 10,
-                >= 'a' and <= 'z' => c - 'a' + 36,
-                _ => throw new ArgumentException($"Invalid character {c} in number {this.NumberAsString}")
-            };
-
-            if (value >= this.BaseValue)
-            {
-                throw new ArgumentException($"Invalid character {c} for base {this.BaseValue}");
-            }
-
-            result += value * multiplier;
-            multiplier *= this.BaseValue;
+            long index = number % baseValue;
+            sb.Insert(0, charset[(int)index]);
+            number = (number - index) / baseValue;
         }
-
-        return result;
+        return sb.ToString();
+    }
+    
+    public long GetLongValue(bool part2=false)
+    {
+        const string Numbers = "0123456789";
+        const string Upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const string Lower = "abcdefghijklmnopqrstuvwxyz";
+        const string Specials = "!@#$%^";
+        string charset;
+        if(!part2)
+        {
+            charset = (Numbers + Upper + Lower).Substring(0,this.BaseValue);
+        }
+        else
+        {
+            charset = (Numbers + Upper + Lower + Specials).Substring(0,this.BaseValue);
+        }
+        
+        long number = 0;
+        foreach (var t in this.NumberAsString)
+        {
+            int value = charset.IndexOf(t);
+            number = number * this.BaseValue + value;
+        }
+        return number;
     }
 
 }
