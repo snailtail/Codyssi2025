@@ -1,13 +1,57 @@
 ﻿using System.Text;
 
-const string fileName = "example.txt";
+const string fileName = "input.txt";
 var parts = File.ReadAllText(fileName).Split($"{Environment.NewLine}{Environment.NewLine}");
 string[] gridData = parts[0].Split(Environment.NewLine);
+List<Instruction> instructions = parts[1].Split(Environment.NewLine).Select(ParseInstruction).ToList();
+
+
 
 var pool = new Whirlpool(gridData);
 pool.PrintGrid();
 
-Console.ReadLine();
+Instruction ParseInstruction(string instruction)
+{
+    var instructionParts = instruction.Split(" ");
+    
+    InstructionType instructionType = (InstructionType)Enum.Parse(typeof(InstructionType), instructionParts[0]);
+    TargetType targetType = instructionType == InstructionType.SHIFT
+        ? (TargetType)Enum.Parse(typeof(TargetType), instructionParts[1])
+        : (TargetType)Enum.Parse(typeof(TargetType), instructionParts[2]);
+
+    int amount = instructionType == InstructionType.SHIFT ? int.Parse(instructionParts[4]) : int.Parse(instructionParts[1]);
+
+    int? targetIndex;
+    if (instructionType == InstructionType.SHIFT)
+    {
+        targetIndex = int.Parse(instructionParts[2]);
+    }
+    else if (targetType == TargetType.ALL)
+    {
+        targetIndex = null;
+    }
+    else
+    {
+        targetIndex = int.Parse(instructionParts[3]);
+    }
+    
+    var parsedInstruction = new Instruction(instructionType, targetType,amount,targetIndex);
+    return parsedInstruction;
+}
+enum InstructionType
+{
+    SHIFT,
+    ADD,
+    SUB,
+    MULTIPLY
+}
+
+enum TargetType
+{
+    ROW,
+    COL,
+    ALL
+}
 
 class Whirlpool
 {
@@ -49,3 +93,5 @@ class Whirlpool
         return grid;
     }
 }
+
+record Instruction(InstructionType Type, TargetType Target, int Amount, int? TargetIndex = null);
