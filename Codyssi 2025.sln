@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyclopsChaos", "CyclopsChao
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesInAStorm", "GamesInAStorm\GamesInAStorm.csproj", "{507CD459-6225-463C-9D1B-8DF557BBBF16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChallengingTheWhirlpool", "ChallengingTheWhirlpool\ChallengingTheWhirlpool.csproj", "{F5C6E56E-AA14-416A-BC46-7C5717F75EC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{507CD459-6225-463C-9D1B-8DF557BBBF16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{507CD459-6225-463C-9D1B-8DF557BBBF16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{507CD459-6225-463C-9D1B-8DF557BBBF16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5C6E56E-AA14-416A-BC46-7C5717F75EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5C6E56E-AA14-416A-BC46-7C5717F75EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5C6E56E-AA14-416A-BC46-7C5717F75EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5C6E56E-AA14-416A-BC46-7C5717F75EC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
