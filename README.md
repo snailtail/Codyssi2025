@@ -10,7 +10,7 @@ This is me playing around with solving some of the challenges from [Codyssi 2025
 - Github
 - Instant coffee
 
-## Puzzles for 2025 "Journey to Atlantis"  
+## Puzzles for 2025 "Journey to Atlantis" in order of publication  
 - Compass Calibration (solved)    
 - Absurd Arithmetic (solved)  
 - Supplies in Surplus (solved)  
