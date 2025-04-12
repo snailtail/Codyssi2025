@@ -16,6 +16,52 @@ foreach (var instruction in instructions)
 
 part1();
 part2();
+part3();
+
+void part3()
+{
+    var pool = new Whirlpool(gridData);
+    Instruction activeInstruction = null;
+    int loopCount = 1;
+    
+    while (instructions.Count > 0)
+    {
+        foreach (var action in actions)
+        {
+            if (activeInstruction == null && instructions.Count == 0)
+            {
+                break;
+            }
+            
+            if (action == "TAKE")
+            {
+                activeInstruction = instructions[0];
+                instructions.RemoveAt(0);
+            }
+
+            if (action == "CYCLE")
+            {
+                if (activeInstruction != null)
+                {
+                    instructions.Add(activeInstruction!);
+                }
+                else
+                {
+                    throw new ArgumentException("CYCLE action tried to cycle NULL instruction");
+                }
+            }
+
+            if (action == "ACT")
+            {
+                pool.PerformInstruction(activeInstruction!);
+                activeInstruction = null;
+            }
+        
+        }
+    }
+    
+    Console.WriteLine($"Part 3: {pool.LargestRowOrColumnSum}");
+}
 
 void part2()
 {
@@ -357,3 +403,16 @@ class Whirlpool
 }
 
 record Instruction(InstructionType Type, TargetType Target, int Amount, int? TargetIndex = null);
+
+static class Extensions
+{
+    public static string Printable(this List<Instruction> thelist)
+    {
+        return string.Join(Environment.NewLine, thelist.Select(instruction => instruction.ToString()));   
+    }
+    
+    public static string Printable(this List<string> thelist)
+    {
+        return string.Join(Environment.NewLine, thelist);
+    }
+}
